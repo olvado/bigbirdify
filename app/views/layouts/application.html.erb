@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bigbirdify</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<%= content_tag :body, data: { module: controller_name, action: action_name } do %>
+  <%= content_tag :div, "", class: "message" %>
+  <%= yield %>
+  <%= javascript_include_tag 'application'%>
+<% end %>
+</html>

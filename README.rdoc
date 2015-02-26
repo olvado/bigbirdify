@@ -1,4 +1,4 @@
 == BigBirdify
 BigBird, Browserify and Rails sitting in a tree...
 
-[http://bigbirdify.herokuapp.com](http://bigbirdify.herokuapp.com)
+http://bigbirdify.herokuapp.com

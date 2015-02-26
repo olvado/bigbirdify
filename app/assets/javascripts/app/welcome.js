@@ -1,5 +1,6 @@
 "use strict";
 
+var $ = require("jquery");
 var BigBird = require("bigbird");
 
 module.exports = BigBird.Module.extend({
@@ -7,21 +8,28 @@ module.exports = BigBird.Module.extend({
   el: 'body',
 
   events: {
-    "click .button": "onButtonClick"
+    "click .js-button": "onButtonClick"
   },
 
   initialize: function initialize() {
-    this.sendMessage("Welcome message");
+
+    this.sendMessage("Welcome");
   },
 
   onButtonClick: function(e) {
     e.preventDefault();
     e.stopPropagation();
-    this.sendMessage("Looks like you clicked the button");
+    $(e.currentTarget).remove();
+
+    this.$els('bigbird-version').text( BigBird.VERSION );
+    this.$els('jquery-version').text( $.fn.jquery );
+    this.$els('modernizr-version').text( Modernizr._version )
+
+    this.sendMessage("Framework versions updated");
   },
 
   sendMessage: function(msg) {
-    this.publish('messenger:message', msg);
+    this.publish('messenger:send', msg);
   },
 
 });

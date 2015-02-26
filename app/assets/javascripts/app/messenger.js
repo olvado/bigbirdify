@@ -8,7 +8,7 @@ module.exports = BigBird.Module.extend({
   el: $('.message'),
 
   subscriptions: {
-    "messenger:message": "updateMessage"
+    "messenger:send": "updateMessage"
   },
 
   updateMessage: function(msg) {

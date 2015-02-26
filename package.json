@@ -1,5 +1,10 @@
 {
   "name": "bigbirdify",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/olvado/bigbirdify"
+  },
   "devDependencies": {
     "watchify": "^2.4.0",
     "browserify": "^9.0.3"

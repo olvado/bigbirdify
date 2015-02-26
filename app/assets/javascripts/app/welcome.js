@@ -12,7 +12,6 @@ module.exports = BigBird.Module.extend({
   },
 
   initialize: function initialize() {
-
     this.sendMessage("Welcome");
   },
 
@@ -23,13 +22,13 @@ module.exports = BigBird.Module.extend({
 
     this.$els('bigbird-version').text( BigBird.VERSION );
     this.$els('jquery-version').text( $.fn.jquery );
-    this.$els('modernizr-version').text( Modernizr._version )
+    this.$els('modernizr-version').text( Modernizr._version );
 
     this.sendMessage("Framework versions updated");
   },
 
   sendMessage: function(msg) {
     this.publish('messenger:send', msg);
-  },
+  }
 
 });
